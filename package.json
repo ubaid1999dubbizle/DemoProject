@@ -1,0 +1,22 @@
+{
+  "name": "demoproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ubaid1999dubbizle/DemoProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ubaid1999dubbizle/DemoProject/issues"
+  },
+  "homepage": "https://github.com/ubaid1999dubbizle/DemoProject#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

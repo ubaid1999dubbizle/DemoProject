@@ -29,7 +29,12 @@ app.use(express.json());
 //used to parse and return middeware which looks at the request 
 app.use(express.urlencoded({extended: true}));
 
+//routers
 
+//User
+const Userrouter = require('./routes/userRoutes.js')
+
+app.use('/api/users', Userrouter )
 
 //testing api
 

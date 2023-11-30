@@ -36,6 +36,12 @@ const Userrouter = require('./routes/userRoutes.js')
 
 app.use('/api/users', Userrouter )
 
+//PostRouter
+
+const Postrouter = require('./routes/postRoutes.js');
+
+app.use('/api/posts', Postrouter );
+
 //testing api
 
 app.get('/', (req, res) => {

@@ -1,5 +1,6 @@
 const db = require('../util/database');
 const Post = db.posts;
+const User = db.users;
 
 // Create Post
 const addPost = async (req, res) => {
@@ -9,7 +10,10 @@ const addPost = async (req, res) => {
             userId: req.body.userId,
             content: req.body.content
         };
-
+        const user = await User.findByPk(postInfo.userId);
+        if(!user){
+            return res.status(404).json({ error: 'User not found.' });
+        }
         const post = await Post.create(postInfo);
         res.status(200).send(post);
     } catch (error) {
@@ -30,7 +34,7 @@ const getPosts = async (req,res) => {
 
     let post = await Post.findAll({
     });
-    res.status(200).send(Post)
+    res.status(200).send(post)
 }
 
 //get single Post
@@ -39,7 +43,7 @@ const getOnePost = async (req, res) => {
     
     let id = req.params.id
     let post = await Post.findOne({where: { id : id }})
-    res.status(200).send(Post)
+    res.status(200).send(post)
 }
 
 //update Post
@@ -48,9 +52,9 @@ const updatePost = async (req, res) => {
     try {
     let id = req.params.id
 
-    const Post = await Post.update(req.body, { where: { id : id } }) 
+    const post = await Post.update(req.body, { where: { id : id } }) 
 
-    res.status(200).send(Post)
+    res.status(200).send(post)
     } catch (error) {
       console.error('Error adding Post:', error);
     

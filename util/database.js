@@ -35,7 +35,7 @@ db.sequelize = sequelize;
 
 
 db.users = require('../models/user.js')(sequelize,DataTypes);
-
+db.posts = require('../models/post.js')(sequelize,DataTypes);
 
 
 // everytime we run the server on this api, we might lose all our data so we write force: false

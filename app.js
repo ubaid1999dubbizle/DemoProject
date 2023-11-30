@@ -47,6 +47,12 @@ const CommentRouter = require('./routes/commentRoutes.js');
 
 app.use('/api/comments', CommentRouter );
 
+//Reply thread router
+
+const replythreadrouter = require('./routes/replythreadRoutes.js');
+
+app.use('/api/replythread', replythreadrouter );
+
 //testing api
 
 app.get('/', (req, res) => {

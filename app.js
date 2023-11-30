@@ -41,6 +41,11 @@ const Postrouter = require('./routes/postRoutes.js');
 
 app.use('/api/posts', Postrouter );
 
+//CommentRouter
+
+const CommentRouter = require('./routes/commentRoutes.js');
+
+app.use('/api/comments', CommentRouter );
 
 //testing api
 

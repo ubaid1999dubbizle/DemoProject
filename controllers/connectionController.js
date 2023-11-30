@@ -1,6 +1,7 @@
 const db = require('../util/database');
 
 const ConnectionRequest = db.connectionreqs;
+const User = db.users;
 
 
 //create ConnectionReq
@@ -11,7 +12,14 @@ const addConnectionReq = async (req, res) => {
         receiverId: req.body.receiverId,
         status: 'pending'
       };
-  
+      
+      const sender = await User.findByPk(connectionRequestInfo.senderId);
+      const receiver = await User.findByPk(connectionRequestInfo.receiverId);
+
+      if (!sender || !receiver) {
+          return res.status(404).json({ error: 'Sender or receiver not found.' });
+      }
+
       const connectionRequest = await ConnectionRequest.create(connectionRequestInfo);
       res.status(200).send(connectionRequest);
     } catch (error) {

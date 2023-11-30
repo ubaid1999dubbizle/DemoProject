@@ -11,6 +11,15 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      connectionreq.belongsTo(models.user, {
+        as: 'sender',
+        foreignKey: 'senderId',
+      });
+  
+      connectionreq.belongsTo(models.User, {
+        as: 'receiver',
+        foreignKey: 'receiverId',
+      });
       
     }
   }

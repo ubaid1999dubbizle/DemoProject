@@ -4,7 +4,6 @@ const cors = require('cors');
 
 const app = express();
 
-
 //app. functionaltieis include get post use
 //let's say we create app. for '/admin' and latter text includes use
 // by just typing the url, we can directly access the admin portal. 
@@ -35,6 +34,13 @@ app.use(express.urlencoded({extended: true}));
 const Userrouter = require('./routes/userRoutes.js')
 
 app.use('/api/users', Userrouter )
+
+//PostRouter
+
+const Postrouter = require('./routes/postRoutes.js');
+
+app.use('/api/posts', Postrouter );
+
 
 //testing api
 

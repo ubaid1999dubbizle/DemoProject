@@ -42,6 +42,17 @@ const Postrouter = require('./routes/postRoutes.js');
 app.use('/api/posts', Postrouter );
 
 
+
+
+
+
+
+//Reaction Router
+
+const ReactionRouter = require('./routes/reactionRoutes.js');
+
+app.use('/api/reaction', ReactionRouter );
+
 //testing api
 
 app.get('/', (req, res) => {

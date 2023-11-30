@@ -22,6 +22,10 @@ module.exports = (sequelize, DataTypes) => {
         as: 'post',
       })
 
+      comment.hasMany(models.replythread, {
+        foreignKey: 'commentorID', as: 'comment'
+      })
+
     }
   }
   comment.init({

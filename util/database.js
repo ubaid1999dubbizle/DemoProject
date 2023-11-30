@@ -38,6 +38,10 @@ db.users = require('../models/user.js')(sequelize,DataTypes);
 
 
 
+
+db.connectionreqs = require('../models/connectionreq.js')(sequelize,DataTypes);
+
+
 // everytime we run the server on this api, we might lose all our data so we write force: false
 // also if tables doensot exist it will create it. but if exist, it won't recreate it (which is the case for force: true)
 db.sequelize.sync({force: false})

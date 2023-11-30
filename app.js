@@ -36,6 +36,13 @@ const Userrouter = require('./routes/userRoutes.js')
 
 app.use('/api/users', Userrouter )
 
+
+//ConnectionRequestrouter
+
+const ConnectionRequestrouter = require('./routes/connectionRequestRoutes.js');
+
+app.use('/api/connectionreq', ConnectionRequestrouter );
+
 //testing api
 
 app.get('/', (req, res) => {
